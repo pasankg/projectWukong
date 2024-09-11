@@ -1,0 +1,75 @@
+{
+ "nameCard": {
+  "fullName": "John Doe",
+  "designation": "SSE",
+  "contactDetails": {
+   "phoneNumber": "+61041345678",
+   "email": "john.doe@gmail.com",
+   "location": "2000 NSW Australia",
+   "social": [
+    {
+     "socialName": "LinkedIn",
+     "socialLink": "https://au.linkedin.com/"
+    },
+    {
+     "socialName": "github",
+     "socialLink": "https://github.com/"
+    }
+   ]
+  }
+ },
+ "profileSummary": [
+  "Over 14 years of experience",
+  "Proficient in <b>NodeJS</b> and <b>React</b>"
+ ],
+ "experience": [
+  {
+   "companyName": "Company Alpha",
+   "designation": "SSE",
+   "period": {
+    "startDate": "20240201",
+    "endDate": "current"
+   },
+   "workSummary": [
+    {
+     "projectName": "XXY",
+     "duties": [
+      "Spearheaded the transition to microservices for common domains",
+      "lorum ipsum"
+     ]
+    }
+   ]
+  },
+  {
+   "companyName": "Company Beta",
+   "designation": "QA",
+   "period": {
+    "startDate": "20200501",
+    "endDate": "20240121"
+   },
+   "workSummary": [
+    {
+     "projectName": "XXY",
+     "duties": [
+      "Integrated a suite of AWS services for infrastructure support,",
+      "lorum ipsum"
+     ]
+    }
+   ]
+  }
+ ],
+ "education": [
+  {
+   "instituteName": "University of Arizona",
+   "courseName": "Master's Degree, Information Technology",
+   "duration": "2014-2017",
+   "additionalInformation": [
+    "GPA 3.8"
+   ]
+  }
+ ],
+ "skills": [
+  "NestJS",
+  "PHP"
+ ]
+}
