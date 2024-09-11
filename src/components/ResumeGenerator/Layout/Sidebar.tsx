@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 
-const {Sider} = Layout;
+const { Sider } = Layout;
 
 const siderStyle: React.CSSProperties = {
   textAlign: "center",

@@ -1,12 +1,12 @@
 import React from "react";
 import { Col, Row } from "antd";
-import PageLayout from "./PageLayout";
+import { PageLayout } from "./index";
 
 const Grid: React.FC = () => (
   <>
     <Row>
       <Col span={24}>
-       <PageLayout/>
+        <PageLayout />
       </Col>
     </Row>
   </>

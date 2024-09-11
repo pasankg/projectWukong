@@ -12,6 +12,8 @@ const headerStyle: React.CSSProperties = {
   backgroundColor: "#4096ff",
 };
 
-const HeaderComponent: React.FC = () => <Header style={headerStyle}>Header</Header>;
+const HeaderComponent: React.FC = () => (
+  <Header style={headerStyle}>Header</Header>
+);
 
 export default HeaderComponent;
