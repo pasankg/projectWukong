@@ -5,7 +5,7 @@ import {
   SidebarComponent,
   ContentComponent,
   FooterComponent,
-} from "./index";
+} from "./";
 
 const layoutStyle = {
   borderRadius: 8,

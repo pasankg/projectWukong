@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { nameCard } from "../../../types/index";
+import { nameCard } from "../../../types";
 
 interface NameCardSectionProps extends nameCard {}
 
@@ -12,9 +12,10 @@ const NameCardSection: FC<NameCardSectionProps> = ({
     <div>
       <h2>{fullName}</h2>
       <p>{designation}</p>
-      <ul>
-        {console.log(contactDetails)}
-        <li>{contactDetails.email}</li>
+      <ul>        
+        <li>{contactDetails?.location}</li>
+        <li>{contactDetails?.email}</li>
+        <li>{contactDetails?.phoneNumber}</li>
       </ul>
     </div>
   );
