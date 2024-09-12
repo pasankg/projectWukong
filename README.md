@@ -11,7 +11,7 @@ Libraries used in this project.
   - https://www.npmjs.com/package/vitest
 - Date formatting - Day.JS
   - https://www.npmjs.com/package/dayjs
+- Parsing HTML - html-react-parser
+  - https://www.npmjs.com/package/html-react-parser
 - Ant Design - For Front End design UI
   - https://ant.design/
-
-# FileReader
