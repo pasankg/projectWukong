@@ -2,6 +2,7 @@
 import { useGetDataFromJson } from "./hooks";
 // import { Grid } from "./components/ResumeGenerator/Layout";
 import {
+  ExperienceSection,
   NameCardSection,
   SummarySection,
 } from "./components/ResumeGenerator/Sections";
@@ -15,6 +16,7 @@ function App() {
     <>
       <NameCardSection {...fileData?.nameCard} />
       <SummarySection profileSummaryData={fileData?.profileSummary} />
+      <ExperienceSection experiences={fileData?.experience} />
     </>
   );
 }

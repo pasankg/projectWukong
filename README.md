@@ -15,3 +15,9 @@ Libraries used in this project.
   - https://www.npmjs.com/package/html-react-parser
 - Ant Design - For Front End design UI
   - https://ant.design/
+
+
+  # VS Code plugins
+  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  - https://marketplace.visualstudio.com/items?itemName=teabyii.ayu
+  - 
