@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Social } from "../../../types";
+import { map } from "lodash";
 
 interface SocialSectionProps extends Social {}
 
@@ -8,10 +9,10 @@ const SocialSection: FC<SocialSectionProps> = ({ socialData }) => {
 
   return (
     <>
-      {socialData.map((social, s) => {
+      {map(socialData, (item, index) => {
         return (
-          <a key={s} href={social?.socialLink}>
-            {social?.socialName}
+          <a key={`social-element-${index}`} href={item?.socialLink}>
+            {item?.socialName}
           </a>
         );
       })}

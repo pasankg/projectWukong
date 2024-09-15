@@ -13,11 +13,7 @@ function App() {
 
   return (
     <>
-      <NameCardSection
-        fullName={fileData?.nameCard?.fullName}
-        designation={fileData?.nameCard?.designation}
-        contactDetails={fileData?.nameCard?.contactDetails}
-      />
+      <NameCardSection {...fileData?.nameCard} />
       <SummarySection profileSummaryData={fileData?.profileSummary} />
     </>
   );
