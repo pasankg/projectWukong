@@ -1,50 +1,49 @@
-interface NameCard {
+export interface NameCard {
   fullName: string;
   designation: string;
   contactDetails: ContactDetails;
 }
 
-interface ContactDetails {
+export interface ContactDetails {
   phoneNumber: string;
   email: string;
   location: string;
   social: Social[];
 }
 
-interface Social {
+export interface Social {
   socialName: string;
   socialLink: string;
 }
 
-interface Experience {
+export interface Experience {
   companyName: string;
   designation: string;
   period: Period;
   workSummary: WorkSummary[];
 }
 
-interface Period {
+export interface Period {
   startDate: string;
   endDate: string;
 }
 
-interface WorkSummary {
+export interface WorkSummary {
   projectName: string;
   duties: string[];
 }
 
-interface Education {
+export interface Education {
   instituteName: string;
   courseName: string;
   duration: string;
   additionalInformation: string[];
 }
 
-
-export interface JsonDataDto {
-  nameCard: NameCard;
-  profileSummary: string[];
-  experience: Experience[];
-  education: Education[];
-  skills: string[];
+export interface Resume {
+  nameCard?: NameCard;
+  profileSummary?: string[];
+  experience?: Experience[];
+  education?: Education[];
+  skills?: string[];
 }

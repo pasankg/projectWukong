@@ -1,25 +1,28 @@
 import { FC } from "react";
 import { Experience } from "../../../types";
-import { map } from "lodash";
-import dayjs from "dayjs";
+import { map, isEmpty } from "lodash";
+import { getPeriod } from "../../../utility";
 
-interface ExperienceSectionProps extends Experience {}
+interface ExperienceProp {
+  experiences: Experience[];
+}
 
-const ExperienceSection: FC<ExperienceSectionProps> = ({ experiences }) => {
+const ExperienceSection: FC<ExperienceProp> = ({ experiences }) => {
+  if (isEmpty(experiences)) return null;
   return (
     <>
       {map(experiences, (item, index) => {
         return (
-          <ul>
-            <li key={`experience-item-designation-${index}`}>
-              {item?.designation}
-            </li>
-            <li key={`experience-item-company-${index}`}>
-              {item?.companyName}
-            </li>
-            <li key={`experience-item-period-${index}`}>
-              {dayjs(item?.period?.startDate).format("MMM YYYY") + `-`}{" "}
-              {item?.period?.endDate}
+          <ul key={`experience-item-${index}`}>
+            <li>{item?.designation}</li>
+            <li>{item?.companyName}</li>
+            <li>
+              {getPeriod.getDuration(
+                item?.period?.startDate,
+                item?.period?.endDate
+              )}
+              {/* {dayjs(item?.period?.startDate).format("MMM YYYY") + `-`}{" "}
+              {item?.period?.endDate} */}
             </li>
           </ul>
         );

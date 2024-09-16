@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { Social } from "../../../types";
-import { map } from "lodash";
+import { map, isEmpty } from "lodash";
 
-interface SocialSectionProps extends Social {}
+interface SocialSectionProps {
+  socialData: Social[]
+}
 
 const SocialSection: FC<SocialSectionProps> = ({ socialData }) => {
-  if (!socialData) return null;
+  if (isEmpty(socialData)) return null; 
 
   return (
     <>

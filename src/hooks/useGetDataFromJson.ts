@@ -1,9 +1,11 @@
 
 import { useState, useEffect } from 'react'
+import { Resume } from '../types'
 
-export interface UseGetDataFromJsonParams { } // In the index.ts file, interface is exported by `export * from ''` code
 const RESUME = "../../resume.json";
-const useGetDataFromJson = (params: UseGetDataFromJsonParams) => {
+
+//Resume return type
+const useGetDataFromJson = (): Resume => {
  const [data, setData] = useState({})
 
  useEffect(() => {

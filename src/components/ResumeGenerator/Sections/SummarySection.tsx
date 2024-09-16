@@ -1,15 +1,17 @@
 import { FC } from "react";
 import parse from "html-react-parser";
-import { profileSummary } from "../../../types";
-import { map } from "lodash";
-interface SummarySectionProps extends profileSummary {}
+import { Resume } from "../../../types";
+import { map, isEmpty } from "lodash";
+interface SummarySectionProps {
+  profileSummary: Resume["profileSummary"];
+}
 
-const SummarySection: FC<SummarySectionProps> = ({ profileSummaryData }) => {
-  if (!profileSummaryData) return null;
+const SummarySection: FC<SummarySectionProps> = ({ profileSummary }) => {
+  if (isEmpty(profileSummary)) return null;
   return (
     <>
       {/* Using lodash library */}
-      {map(profileSummaryData, (item, index) => {
+      {map(profileSummary, (item, index) => {
         return <li key={`profile-summary-${index}`}>{parse(item)}</li>;
       })}
 

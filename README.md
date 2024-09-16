@@ -20,4 +20,6 @@ Libraries used in this project.
   # VS Code plugins
   - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
   - https://marketplace.visualstudio.com/items?itemName=teabyii.ayu
-  - 
+  - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+  - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+  - https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments

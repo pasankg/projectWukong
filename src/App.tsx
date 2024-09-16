@@ -8,17 +8,19 @@ import {
 } from "./components/ResumeGenerator/Sections";
 
 function App() {
-  const fileData = useGetDataFromJson({});
+  const fileData = useGetDataFromJson();
   console.log(`~ useGetDataFromJson`, fileData);
   // return <Grid/>
 
   return (
     <>
-      <NameCardSection {...fileData?.nameCard} />
-      <SummarySection profileSummaryData={fileData?.profileSummary} />
-      <ExperienceSection experiences={fileData?.experience} />
+      <NameCardSection {...(fileData?.nameCard || [])} />
+      <SummarySection profileSummary={fileData?.profileSummary} />
+      <ExperienceSection experiences={fileData?.experience || []} />
     </>
   );
 }
 
 export default App;
+
+//fullName, designation, contactDetails
