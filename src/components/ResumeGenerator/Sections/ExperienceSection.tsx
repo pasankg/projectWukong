@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Experience } from "../../../types";
 import { map, isEmpty } from "lodash";
-import { getPeriod } from "../../../utility";
+import { getTenure } from "../../../utility";
+import { dayjs } from "../../../vendors";
 
 interface ExperienceProp {
   experiences: Experience[];
@@ -17,12 +18,15 @@ const ExperienceSection: FC<ExperienceProp> = ({ experiences }) => {
             <li>{item?.designation}</li>
             <li>{item?.companyName}</li>
             <li>
-              {getPeriod.getDuration(
+              {getTenure.getPeriod(
                 item?.period?.startDate,
                 item?.period?.endDate
               )}
-              {/* {dayjs(item?.period?.startDate).format("MMM YYYY") + `-`}{" "}
-              {item?.period?.endDate} */}
+              <br />
+              {getTenure.getDuration(
+                dayjs(item?.period?.startDate),
+                item?.period?.endDate
+              )}
             </li>
           </ul>
         );

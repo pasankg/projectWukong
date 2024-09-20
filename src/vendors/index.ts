@@ -1,1 +1,1 @@
-export { default as dayjs } from './dayjs' // Export all the export default
+export { dayjs } from './dayjs' // Export all the export default

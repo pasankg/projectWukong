@@ -56,6 +56,23 @@
      ]
     }
    ]
+  },
+  {
+   "companyName": "Company Delta",
+   "designation": "Junior Developer",
+   "period": {
+    "startDate": "20181201",
+    "endDate": ""
+   },
+   "workSummary": [
+    {
+     "projectName": "SRT",
+     "duties": [
+      "HTML, CSS , WordPress",
+      "lorum ipsum"
+     ]
+    }
+   ]
   }
  ],
  "education": [

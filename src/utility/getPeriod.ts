@@ -1,12 +1,18 @@
 import { dayjs } from '../vendors'
-import { isEmpty } from "lodash";
+import { Dayjs } from 'dayjs' // Import the Dayjs type
+import { isEmpty, toLower } from "lodash";
 
-const getPeriod = (startDate, endDate) => {
+export const getPeriod = (startDate: Dayjs | string, endDate: Dayjs | string) => {
  if (isEmpty(startDate) || !dayjs(startDate).isValid()) return '';
  const processedStart = dayjs(startDate).format("MMM YYYY")
 
- if (isEmpty(endDate)) return `${processedStart} - current`;
- if (!dayjs(endDate).isValid()) return `${processedStart}`
+ if (isEmpty(endDate)) return `${processedStart} - unknown`;
+ if (!dayjs(endDate).isValid()) {
+  if (toLower(endDate) === 'current') {
+   return `${processedStart} - current`;
+  }
+  return `${processedStart}`
+ }
 
  const processedEndDate = dayjs(endDate).format("MMM YYYY")
  return `${processedStart} - ${processedEndDate}`
@@ -14,9 +20,14 @@ const getPeriod = (startDate, endDate) => {
 }
 
 
-const getDuration = (startDate, endDate) => {
- const duration = dayjs.duration(startDate.diff(endDate))
- return duration;
+export const getDuration = (startDate: Dayjs, endDate: Dayjs | string) => {
+ if (!dayjs(endDate).isValid()) endDate = dayjs();
+
+ const duration = dayjs.duration(dayjs(endDate).diff(startDate))
+ const years = duration.years();
+ const months = duration.months();
+
+ return `Duration: ${years ? `${years} years and` : ''} ${months} months`
 }
 
 export default { getPeriod, getDuration }

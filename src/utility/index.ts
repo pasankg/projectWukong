@@ -1,1 +1,1 @@
-export { default as getPeriod } from "./getPeriod"
+export { default as getTenure } from "./getPeriod"
