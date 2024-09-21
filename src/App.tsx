@@ -1,5 +1,6 @@
 // import { useState } from "react";
-import { useGetDataFromJson, useGetTemplateEngine } from "./hooks";
+import { Stack } from '@mui/system'
+import { useGetDataFromJson, useDynamicTemplateGenerator } from "./hooks";
 // import { Grid } from "./components/ResumeGenerator/Layout";
 import {
   ExperienceSection,
@@ -10,14 +11,15 @@ import {
 function App() {
   const fileData = useGetDataFromJson();
 
-  useGetTemplateEngine()
+  const context = useDynamicTemplateGenerator()
 
   return (
-    <>
+    <Stack>
+      <Stack>{context}</Stack>
       <NameCardSection {...(fileData?.nameCard || [])} />
       <SummarySection profileSummary={fileData?.profileSummary} />
       <ExperienceSection experiences={fileData?.experience || []} />
-    </>
+    </Stack>
   );
 }
 

@@ -11,6 +11,9 @@
     "tsc-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/system": "^6.1.1",
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.20.6",
     "html-react-parser": "^5.1.16",
