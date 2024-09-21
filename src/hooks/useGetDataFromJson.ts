@@ -1,9 +1,11 @@
 
 import { useState, useEffect } from 'react'
+import { Resume } from '../types'
 
-export interface UseGetDataFromJsonParams { } // in the index.ts file, interface is exported by `export * from ''` code
 const RESUME = "../../resume.json";
-const useGetDataFromJson = (params: UseGetDataFromJsonParams) => {
+
+//Resume return type
+const useGetDataFromJson = (): Resume => {
  const [data, setData] = useState({})
 
  useEffect(() => {
@@ -21,7 +23,7 @@ const useGetDataFromJson = (params: UseGetDataFromJsonParams) => {
 
 }
 
-export default useGetDataFromJson //in the index.ts file, defualts are exported from `export { default as useGetDataFromJson } from ''`
+export default useGetDataFromJson //In the index.ts file, defaults are exported from `export { default as useGetDataFromJson } from ''`
 
 
 

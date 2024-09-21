@@ -11,7 +11,15 @@ Libraries used in this project.
   - https://www.npmjs.com/package/vitest
 - Date formatting - Day.JS
   - https://www.npmjs.com/package/dayjs
+- Parsing HTML - html-react-parser
+  - https://www.npmjs.com/package/html-react-parser
 - Ant Design - For Front End design UI
   - https://ant.design/
 
-# FileReader
+
+  # VS Code plugins
+  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  - https://marketplace.visualstudio.com/items?itemName=teabyii.ayu
+  - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+  - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+  - https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
