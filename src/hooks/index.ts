@@ -1,2 +1,4 @@
-export { default as useGetDataFromJson } from './useGetDataFromJson' // Export all the export default
-export * from './useGetDataFromJson' // Export interfaces.
+export { default as useGetDataFromJson } from './useGetDataFromJson' // Export only default
+export * from './useGetDataFromJson' // Export all.
+
+export { default as useGetTemplateEngine } from './useGetTemplateEngine'

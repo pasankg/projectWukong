@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { useGetDataFromJson } from "./hooks";
+import { useGetDataFromJson, useGetTemplateEngine } from "./hooks";
 // import { Grid } from "./components/ResumeGenerator/Layout";
 import {
   ExperienceSection,
@@ -9,8 +9,8 @@ import {
 
 function App() {
   const fileData = useGetDataFromJson();
-  console.log(`~ useGetDataFromJson`, fileData);
-  // return <Grid/>
+
+  useGetTemplateEngine()
 
   return (
     <>
