@@ -6,10 +6,12 @@ import {
 
 type VariantType = "title" | "paragraph";
 
+declare const TITLE_ELE_LIST: readonly [1, 2, 3, 4, 5];
+
 interface TypographyProps extends AntdTypographyProps {
   children: string;
   variant: VariantType;
-  level?: unknown
+  level?: (typeof TITLE_ELE_LIST)[number]
 }
 
 const { Title, Paragraph, Text } = AntdTypography;
@@ -27,3 +29,10 @@ const Typography: FC<TypographyProps> = ({ children, variant, level = 1,  ...res
 };
 
 export default Typography;
+
+// <Typography variant='title' level={1}></Typography>   -> <h1></h1>
+// <Typography variant='paragraph'></Typography> => <p></p>
+
+// import { Typography } from 'antd'
+// Typography => { Title } => <Title level={1}></Title>
+// Typography => { Text } => <Text></Text>
