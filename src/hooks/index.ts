@@ -2,3 +2,6 @@ export { default as useGetDataFromJson } from './useGetDataFromJson' // Export o
 export * from './useGetDataFromJson' // Export all.
 
 export { default as useDynamicTemplateGenerator } from './useDynamicTemplateGenerator'
+export { default as templateReducer } from './templateSlice'
+export * from './store'
+export * from './templateSlice'

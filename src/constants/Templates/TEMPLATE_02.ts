@@ -57,3 +57,4 @@ export const TEMPLATE_02: TemplateObject[] = [
 
 ];
 
+export default TEMPLATE_02;

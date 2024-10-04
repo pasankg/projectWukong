@@ -55,8 +55,8 @@ const useDynamicTemplateGenerator = (): ReactNode  => {
     );
   };
 
-  // return templateHandler(TEMPLATE_01);
-  return templateHandler(TEMPLATE_02);
+  return templateHandler(TEMPLATE_01);
+  // return templateHandler(TEMPLATE_02);
 };
 
 export default useDynamicTemplateGenerator;

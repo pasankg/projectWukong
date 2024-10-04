@@ -1,15 +1,15 @@
-export const TEMPLATE_01 = {
-  id: 'template1',
-  label: 'Template 1',
+export const TEMPLATE_03 = {
+  id: 'template3',
+  label: 'Template 3',
   type: "row", //layout
   flexDirection: 'column',
-  alignItem: 'center',
+  alignItem: 'left',
   children: [
     {
       type: "column",  //layout
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center',
+      alignItems: 'left',
       children: [
         {
           type: "typography", //elem
@@ -21,13 +21,14 @@ export const TEMPLATE_01 = {
           type: "typography",
           level: 1,
           variant: 'title',
-          input: "right - Panel 02 - level 1 - variant(title)",
+          input: "Left - Panel 02 - level 1 - variant(title)",
         },
       ],
     },
     {
       type: "column",
       flexDirection: 'row',
+      alignItems: 'left',
       children: [{
         type: "typography",
         variant: 'paragraph',
@@ -37,5 +38,4 @@ export const TEMPLATE_01 = {
   ],
 };
 
-export default TEMPLATE_01;
-
+export default TEMPLATE_03;

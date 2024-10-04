@@ -9,18 +9,28 @@ import { useDynamicTemplateGenerator } from "./hooks";
 //   SummarySection,
 // } from "./components/ResumeGenerator/Sections";
 
+import {TemplateDropdown } from './components/ResumeGenerator/Sections'
+import {TemplateDisplay } from './components/ResumeGenerator/Sections'
+
 function App() {
   // const fileData = useGetDataFromJson();
 
-  const context = useDynamicTemplateGenerator()
+  
+
+  // const context = useDynamicTemplateGenerator()
 
   return (
-    <Stack>
-      <Stack>{context}</Stack>
-      {/* <NameCardSection {...(fileData?.nameCard || [])} />
-      <SummarySection profileSummary={fileData?.profileSummary} />
-      <ExperienceSection experiences={fileData?.experience || []} /> */}
-    </Stack>
+    <div>
+      <TemplateDropdown />
+      <TemplateDisplay />
+    </div>
+
+    // <Stack>
+    //   <Stack>{context}</Stack>
+    //   {/* <NameCardSection {...(fileData?.nameCard || [])} />
+    //   <SummarySection profileSummary={fileData?.profileSummary} />
+    //   <ExperienceSection experiences={fileData?.experience || []} /> */}
+    // </Stack>
   );
 }
 
