@@ -1,41 +1,52 @@
 export const TEMPLATE_01 = {
-  id: 'template1',
-  label: 'Template 1',
-  type: "row", //layout
-  flexDirection: 'column',
-  alignItem: 'center',
-  children: [
-    {
-      type: "column",  //layout
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      children: [
-        {
-          type: "typography", //elem
-          variant: 'title',
-          level: 5,
-          input: "Left - Panel 01 - level 5 - variant(title)",
-        },
-        {
-          type: "typography",
-          level: 1,
-          variant: 'title',
-          input: "right - Panel 02 - level 1 - variant(title)",
-        },
-      ],
-    },
-    {
-      type: "column",
-      flexDirection: 'row',
-      children: [{
-        type: "typography",
-        variant: 'paragraph',
-        input: "left - Panel 02 - level 1 - variant(paragraph)",
-      }],
-    },
-  ],
+  id: "TEMPLATE_01",
+  title: "Template 1",
+  blueprint: {
+    type: "row", //layout
+    flexDirection: "column",
+    pt:4,
+    alignItems: "flexStart",
+    children: [
+      {
+        type: "column", //layout
+        flexDirection: "row",
+        gap: 2,
+        backgroundColor: 'antiquewhite',
+        justifyContent: "flexStart",
+        alignItems: "center",
+        children: [
+          {
+            type: "image", //elem
+            variant: "image",
+            input: "Top Center - Panel 01 - variant(image)",
+            src: "	https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
+            width: "150px",
+            height: "150px",
+            placeholder: "image",
+            preview: false,
+          },
+          {
+            type: "column",
+            flexDirection: 'column',
+            children: [
+              {
+                type: "typography", //elem
+                variant: "title",
+                level: "2",
+                style: { textTransform: 'uppercase', marginBottom: 0 },
+                input: "Matthew Jones",
+              },
+              {
+                type: "typography", //elem
+                variant: "paragraph",
+                input: "Financial Analyst",
+              },
+            ]
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export default TEMPLATE_01;
-

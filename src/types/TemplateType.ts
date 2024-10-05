@@ -1,7 +1,7 @@
 export interface ParentRow {
  type: string,
  flexDirection: string,
- alignItem: string,
+ alignItems: string,
  children: ChildrenRow[],
  input: string
 }
@@ -9,7 +9,7 @@ export interface ParentRow {
 export interface ChildrenRow {
  type: string,
  flexDirection: string,
- alignItem: string,
+ alignItems: string,
  variant: string,
  input: string,
  children: ChildrenRow[]

@@ -1,13 +1,19 @@
-import { ReactNode, ElementType } from 'react'
+import { FC, ReactNode, ElementType } from 'react'
 import { map, isArray, isObject, uniqueId } from "lodash";
 import { Stack } from "@mui/system";
-import { TEMPLATE_01, TEMPLATE_02 } from "../constants/Templates";
+import * as TEMPLATE_LIST from "../constants/Templates";
 import { Typography } from "../components/shared/ui";
-import { ChildrenRow, ParentRow, TemplateObject } from "../types";
+import { TemplateObject } from "../types";
 import {Avatar} from '../components/shared/ui/Avatar'
 import { ImageDrawer } from "../components/shared/ui/ImageDrawer";
 
-const useDynamicTemplateGenerator = (): ReactNode  => {
+const { TEMPLATES } = TEMPLATE_LIST
+
+interface UseDynamicTemplateGeneratorArgs {
+  templateId: string
+}
+
+const useDynamicTemplateGenerator:FC<UseDynamicTemplateGeneratorArgs> = ({ templateId = 'TEMPLATE_02'}): ReactNode  => {
   const getElement = (type: string) => {
     switch (type) {
       case "row":
@@ -25,13 +31,13 @@ const useDynamicTemplateGenerator = (): ReactNode  => {
   };
 
   const templateHandler = (data: TemplateObject | TemplateObject[]) => {
-    if(isArray(data)) return map(data, (child) => createComponent(child));
-    return createComponent(data);
+    const { blueprint } = data || {}
+    if(!blueprint) return false
+    if(isArray(blueprint)) return map(blueprint, (child) => createComponent(child));
+    return createComponent(blueprint);
   }
 
-  const createComponent = (row: TemplateObject) => {
-    console.log(row);
-    
+  const createComponent = (row: TemplateObject) => {    
     const { type, children, input, ...rest } = row;
     let content = null;
 
@@ -55,8 +61,8 @@ const useDynamicTemplateGenerator = (): ReactNode  => {
     );
   };
 
-  return templateHandler(TEMPLATE_01);
-  // return templateHandler(TEMPLATE_02);
+  return templateHandler(TEMPLATES[templateId]);
+  // return templateHandler('TEMPLATE_02');
 };
 
 export default useDynamicTemplateGenerator;

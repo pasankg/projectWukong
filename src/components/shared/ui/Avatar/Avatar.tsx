@@ -3,7 +3,7 @@ import { FC } from "react";
 
 interface AvatarProps extends AntAvatartProps {
   src: string;
-  varient: string;
+  variant: string;
 }
 
 const Avatar: FC<AvatarProps> = ({ size = 20, ...restProps }) => {

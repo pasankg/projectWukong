@@ -1,6 +1,5 @@
 // import { useState } from "react";
 import { Stack } from '@mui/system'
-// import { useGetDataFromJson, useDynamicTemplateGenerator } from "./hooks";
 import { useDynamicTemplateGenerator } from "./hooks";
 // import { Grid } from "./components/ResumeGenerator/Layout";
 // import {
@@ -8,22 +7,25 @@ import { useDynamicTemplateGenerator } from "./hooks";
 //   NameCardSection,
 //   SummarySection,
 // } from "./components/ResumeGenerator/Sections";
+import { useSelector } from "react-redux";
 
-import {TemplateDropdown } from './components/ResumeGenerator/Sections'
 import {TemplateDisplay } from './components/ResumeGenerator/Sections'
+import { TemplateGeneratorSelector } from './slices'
 
 function App() {
   // const fileData = useGetDataFromJson();
 
+  const selectedTemplateId = useSelector(TemplateGeneratorSelector.getSelectedTemplateId);
+
   
 
-  // const context = useDynamicTemplateGenerator()
+  const context = useDynamicTemplateGenerator({ templateId: selectedTemplateId })
 
   return (
-    <div>
-      <TemplateDropdown />
+    <Stack>
       <TemplateDisplay />
-    </div>
+      <Stack>{context}</Stack>
+    </Stack>
 
     // <Stack>
     //   <Stack>{context}</Stack>

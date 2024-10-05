@@ -22,9 +22,9 @@ const Typography: FC<TypographyProps> = ({ children, variant, level = 1,  ...res
     case "title":
       return <Title level={level} {...rest}>{children}</Title>;
     case "paragraph":
-      return <Paragraph>{children}</Paragraph>;
+      return <Paragraph {...rest}>{children}</Paragraph>;
     default:
-      return <Text>{children}</Text>;
+      return <Text {...rest}>{children}</Text>;
   }
 };
 
