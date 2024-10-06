@@ -1,23 +1,38 @@
 // import { useState } from "react";
-import { useGetDataFromJson } from "./hooks";
+import { Stack } from '@mui/system'
+import { useDynamicTemplateGenerator } from "./hooks";
 // import { Grid } from "./components/ResumeGenerator/Layout";
-import {
-  ExperienceSection,
-  NameCardSection,
-  SummarySection,
-} from "./components/ResumeGenerator/Sections";
+// import {
+//   ExperienceSection,
+//   NameCardSection,
+//   SummarySection,
+// } from "./components/ResumeGenerator/Sections";
+import { useSelector } from "react-redux";
+
+import {TemplateDisplay } from './components/ResumeGenerator/Sections'
+import { TemplateGeneratorSelector } from './slices'
 
 function App() {
-  const fileData = useGetDataFromJson();
-  console.log(`~ useGetDataFromJson`, fileData);
-  // return <Grid/>
+  // const fileData = useGetDataFromJson();
+
+  const selectedTemplateId = useSelector(TemplateGeneratorSelector.getSelectedTemplateId);
+
+  
+
+  const context = useDynamicTemplateGenerator({ templateId: selectedTemplateId })
 
   return (
-    <>
-      <NameCardSection {...(fileData?.nameCard || [])} />
-      <SummarySection profileSummary={fileData?.profileSummary} />
-      <ExperienceSection experiences={fileData?.experience || []} />
-    </>
+    <Stack>
+      <TemplateDisplay />
+      <Stack>{context}</Stack>
+    </Stack>
+
+    // <Stack>
+    //   <Stack>{context}</Stack>
+    //   {/* <NameCardSection {...(fileData?.nameCard || [])} />
+    //   <SummarySection profileSummary={fileData?.profileSummary} />
+    //   <ExperienceSection experiences={fileData?.experience || []} /> */}
+    // </Stack>
   );
 }
 

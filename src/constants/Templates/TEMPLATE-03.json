@@ -1,0 +1,31 @@
+[
+ {
+  "type": "row",
+  "class": "center",
+  "children": [
+   {
+    "type": "column",
+    "class": "flex pt-4",
+    "style": {
+     "verticalAlign": "center"
+    },
+    "children": [
+     {
+      "type": "Avatar",
+      "input": ":image"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "row",
+  "class": "center",
+  "children": [
+   {
+    "type": "Text",
+    "input": ":designation"
+   }
+  ]
+ }
+]

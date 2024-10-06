@@ -1,0 +1,35 @@
+[
+  {
+    "type": "row",
+    "children": [
+      {
+        "type": "column",
+        "class": "flex pt-4",
+        "style": {
+          "verticalAlign": "left"
+        },
+        "children": [
+          {
+            "type": "Avatar",
+            "input": ":image"
+          },
+          {
+            "type": "Text",
+            "input": ":designation"
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "class": "flex pt-4",
+        "style": {
+          "verticalAlign": "right"
+        },
+        "children": {
+          "type": "Text",
+          "input": ":name"
+        }
+      }
+    ]
+  }
+]

@@ -8,7 +8,7 @@ export const getPeriod = (startDate: Dayjs | string, endDate: Dayjs | string) =>
 
  if (isEmpty(endDate)) return `${processedStart} - unknown`;
  if (!dayjs(endDate).isValid()) {
-  if (toLower(endDate) === 'current') {
+  if (toLower(endDate) === 'current') {  // present, if()
    return `${processedStart} - current`;
   }
   return `${processedStart}`
@@ -19,25 +19,14 @@ export const getPeriod = (startDate: Dayjs | string, endDate: Dayjs | string) =>
 
 }
 
-export const getDuration = (startDate: Dayjs, endDate: Dayjs | string) => {
- if (isEmpty(endDate)) {
-  return `Duration unknown`
- }
+export const getDuration = (startDate: Dayjs, endDate: Dayjs | string): string | null => { //return  - validation avoid break
+ if(!dayjs(startDate).isValid()) return null  
+ if(!dayjs(endDate).isValid()) endDate = dayjs()
 
- if (toLower(endDate) === 'current') {
-  endDate = dayjs();
-  return getDurationText(startDate, endDate)
- }
-
- if (!dayjs(endDate).isValid()) {
-  return `Duration unknown`
- } else {
-  endDate = dayjs();
-  return getDurationText(startDate, endDate)
- }
+ return getDurationPeriod(startDate, endDate)
 }
 
-const getDurationText = (startDate: Dayjs | string, endDate: Dayjs | string) => {
+const getDurationPeriod = (startDate: Dayjs | string, endDate: Dayjs | string) => {
  const duration = dayjs.duration(dayjs(endDate).diff(startDate))
  const years = duration.years();
  const months = duration.months();
